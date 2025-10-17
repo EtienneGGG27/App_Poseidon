@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import api from '../services/api';
 import { AlertTriangle, Waves } from 'lucide-react';
 
-export default function Dashboard() {
+export default function PoseidonDashboard() {
   const { data: zones, isLoading } = useQuery({
     queryKey: ['zones'],
     queryFn: async () => {
