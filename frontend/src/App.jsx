@@ -2,17 +2,17 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { authService } from './services/auth';
 
-// Pages (à créer)
-import Login from './pages/PoseidonLogin';
-import Dashboard from './pages/PoseidonDashboard';
-import Map from './pages/PoseidonMap';
-import Analytics from './pages/PoseidonAnalytics';
-import Alerts from './pages/PoseidonAlerts';
-import Patrols from './pages/PoseidonPatrols';
-import Incidents from './pages/PoseidonIncidents';
-import Reports from './pages/PoseidonReports';
-import Config from './pages/PoseidonConfig';
-import Training from './pages/PoseidonTraining';
+// Pages avec les vrais noms de fichiers
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
+import Map from './pages/Map';
+import Analytics from './pages/Analytics';
+import Alerts from './pages/Alerts';
+import Patrols from './pages/Patrols';
+import Incidents from './pages/Incidents';
+import Reports from './pages/Reports';
+import Config from './pages/Config';
+import Training from './pages/Training';
 
 const queryClient = new QueryClient();
 
