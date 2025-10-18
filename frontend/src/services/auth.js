@@ -1,21 +1,25 @@
-import api from './api';
-
 export const authService = {
   async login(email, password) {
-    const formData = new FormData();
-    formData.append('username', email);
-    formData.append('password', password);
-    
-    const response = await api.post('/auth/login', formData, {
-      headers: { 'Content-Type': 'multipart/form-data' }
-    });
-    
-    if (response.data.access_token) {
-      localStorage.setItem('access_token', response.data.access_token);
-      localStorage.setItem('user', JSON.stringify(response.data.user));
+    // Vérification en dur pour le développement
+    if (email === 'root' && password === 'root') {
+      const mockData = {
+        access_token: 'mock-jwt-token-for-development',
+        user: {
+          id: 1,
+          email: 'root',
+          name: 'Administrateur',
+          role: 'admin'
+        }
+      };
+      
+      localStorage.setItem('access_token', mockData.access_token);
+      localStorage.setItem('user', JSON.stringify(mockData.user));
+      
+      return mockData;
+    } else {
+      // Simuler une erreur d'authentification
+      throw new Error('Identifiants incorrects');
     }
-    
-    return response.data;
   },
   
   logout() {
